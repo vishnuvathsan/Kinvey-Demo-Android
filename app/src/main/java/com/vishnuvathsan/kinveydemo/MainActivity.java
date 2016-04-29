@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LoginActivity.KINVEY_CLIENT.push().initialize(getApplication());
+
         etCollection = (EditText) findViewById(R.id.etCollection);
         etID = (EditText) findViewById(R.id.etID);
 

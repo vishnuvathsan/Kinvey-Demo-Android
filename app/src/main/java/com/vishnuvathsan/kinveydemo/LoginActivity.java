@@ -114,8 +114,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         final Client mKinveyClient = new Client.Builder("kid_b1RY3pU5Wb", "41b95bb08c1b42709cd16ea65d4450dd"
                 , this.getApplicationContext()).build();
 
-        mKinveyClient.push().initialize(getApplication());
-
         mKinveyClient.ping(new KinveyPingCallback() {
             public void onFailure(Throwable t) {
                 Log.e(TAG, "Kinvey Ping Failed", t);
