@@ -3,6 +3,7 @@ package com.vishnuvathsan.kinveydemo;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.kinvey.android.push.KinveyGCMService;
 
@@ -46,5 +47,7 @@ public class GCMService extends KinveyGCMService {
                 .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(1, mBuilder.build());
+
+        Log.e("GCM", message);
     }
 }
