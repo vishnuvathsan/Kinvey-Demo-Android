@@ -42,7 +42,6 @@ public class GCMService extends KinveyGCMService {
 
     private void displayNotification(String message) {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher)
                 .setContentTitle(getApplicationContext().getResources().getString(R.string.app_name))
                 .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

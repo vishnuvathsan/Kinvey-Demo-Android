@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LoginActivity.KINVEY_CLIENT.push().initialize(getApplication());
 
         etCollection = (EditText) findViewById(R.id.etCollection);
         etID = (EditText) findViewById(R.id.etID);
@@ -40,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                LoginActivity.KINVEY_CLIENT.push().initialize(getApplication());
 
                 collection = etCollection.getText().toString().trim();
                 id = etID.getText().toString().trim();
