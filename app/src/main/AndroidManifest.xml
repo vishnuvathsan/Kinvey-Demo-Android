@@ -8,6 +8,9 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +28,21 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".DataActivity"></activity>
+
+        <receiver
+            android:name="com.vishnuvathsan.kinveydemo.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.myPackage" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMService" />
     </application>
+
+    <permission
+        android:name="com.vishnuvathsan.kinveydemo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.vishnuvathsan.kinveydemo.permission.C2D_MESSAGE" />
 
 </manifest>
